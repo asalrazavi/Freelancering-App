@@ -4,14 +4,21 @@ import CheckOTPForm from "./CheckOTPForm";
 
 export default function AuthContainer() {
   const [step, setStep] = useState(1);
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const renderStep = () => {
     switch (step) {
       case 1:
-        return <SendOTPForm setStep={setStep} />;
+        return (
+          <SendOTPForm
+            setStep={setStep}
+            phonenumber={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+        );
 
       case 2:
-        return <CheckOTPForm />;
+        return <CheckOTPForm phoneNumber={phoneNumber} />;
 
       default:
         return null;

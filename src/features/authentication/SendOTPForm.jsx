@@ -1,41 +1,31 @@
-import { useMutation } from "@tanstack/react-query";
 import TextFeild from "../../ui/TextFeild";
-import { getOtp } from "../../services/authService";
-import toast from "react-hot-toast";
 import Loading from "../../ui/Loading";
 
-export default function SendOTPForm({ setStep, phoneNumber, onChange }) {
-  const { isPending, error, data, mutateAsync } = useMutation({
-    mutationFn: getOtp,
-  });
-
-  const SendOtpHandler = async (e) => {
-    e.preventDefault();
-    console.log("Sending OTP for phoneNumber:", phoneNumber);
-    try {
-      const data = await mutateAsync({ phoneNumber });
-      setStep(2);
-      console.log(data.message);
-      toast.success(data.message);
-    } catch (error) {
-      toast.error(error?.response?.message);
-    }
-  };
-
+export default function SendOTPForm({
+  onSubmit,
+  phoneNumber,
+  onChange,
+  isSendOtp,
+}) {
   return (
     <div>
-      <form className="space-y-8" onSubmit={SendOtpHandler}>
+      <form className="flex flex-col items-center gap-y-4" onSubmit={onSubmit}>
+        <h2 className="font-bold text-secondary-800 text-2xl">
+          ورود یا ثبت نام
+        </h2>
+        <p className="mb-4">برای ادامه شماره موبایل خود را وارد کنید.</p>
         <TextFeild
           value={phoneNumber}
           onChange={onChange}
+          placeholder={"شماره موبایل"}
           name="phoneNumber"
-          label="شماره موبایل"
+          // label="شماره موبایل"
         />
         <div>
-          {isPending ? (
+          {isSendOtp ? (
             <Loading />
           ) : (
-            <button type="submit" className="btn btn--primary w-full">
+            <button type="submit" className="mt-10 btn btn--primary w-[23rem]">
               ارسال کد تایید
             </button>
           )}

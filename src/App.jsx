@@ -13,6 +13,8 @@ function App() {
         <Routes>
           <Route path="/auth" element={<Auth />}></Route>
           <Route path="/complete-profile" element={<CompleteProfile />}></Route>
+          <Route path="/" element={}/>
+          <Route path="*" element={}/>
         </Routes>
         <Toaster />
       </div>

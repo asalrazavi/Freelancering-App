@@ -9,7 +9,7 @@ import { CiEdit } from "react-icons/ci";
 import { IoIosRefresh } from "react-icons/io";
 import Loading from "../../ui/Loading";
 
-const RESEND_TIME = 5;
+const RESEND_TIME = 90;
 
 export default function CheckOTPForm({
   phoneNumber,

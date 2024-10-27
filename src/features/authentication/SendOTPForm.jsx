@@ -1,12 +1,7 @@
 import TextFeild from "../../ui/TextFeild";
 import Loading from "../../ui/Loading";
 
-export default function SendOTPForm({
-  onSubmit,
-  phoneNumber,
-  onChange,
-  isSendOtp,
-}) {
+export default function SendOTPForm({ onSubmit, register, isSendOtp }) {
   return (
     <div>
       <form className="flex flex-col items-center gap-y-4" onSubmit={onSubmit}>
@@ -15,8 +10,7 @@ export default function SendOTPForm({
         </h2>
         <p className="mb-4">برای ادامه شماره موبایل خود را وارد کنید.</p>
         <TextFeild
-          value={phoneNumber}
-          onChange={onChange}
+          register={register}
           placeholder={"شماره موبایل"}
           name="phoneNumber"
           // label="شماره موبایل"

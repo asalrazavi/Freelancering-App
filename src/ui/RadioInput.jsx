@@ -3,8 +3,9 @@ export default function RadioInput({
   id,
   label,
   value,
-  onChange,
-  checked,
+  register,
+  validationSchema,
+  watch,
 }) {
   return (
     <div className="flex items-center gap-x-2 text-secondary-600">
@@ -14,8 +15,8 @@ export default function RadioInput({
         name={name}
         id={id}
         value={value}
-        onChange={onChange}
-        checked={checked}
+        {...register(name, validationSchema)}
+        checked={watch(name) === value}
       />
       <label htmlFor={id}>{label}</label>
     </div>

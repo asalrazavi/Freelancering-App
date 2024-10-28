@@ -7,19 +7,43 @@ import DatePickerField from "../../ui/DatePickerField";
 import useCategories from "../../hooks/useCategories";
 import useCreateProject from "./useCreateProject";
 import Loading from "../../ui/Loading";
+import useEditProject from "./useEditProjects";
 
-export default function CreateProjectForm({ onclose }) {
+export default function CreateProjectForm({ onclose, projectToEdit = {} }) {
+  const { _id: editId } = projectToEdit;
+  const isEditSession = Boolean(editId);
+  const {
+    title,
+    description,
+    budget,
+    category,
+    deadline,
+    tags: prevTags,
+  } = projectToEdit;
+
+  let editValues = {};
+
+  if (isEditSession) {
+    editValues = {
+      title,
+      description,
+      budget,
+      category: category._id,
+    };
+  }
+
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm();
+  } = useForm({ defaultValues: editValues });
 
-  const [tags, setTags] = useState([]);
-  const [date, setDate] = useState(new Date());
+  const [tags, setTags] = useState(prevTags || []);
+  const [date, setDate] = useState(new Date(deadline || ""));
   const { categories } = useCategories();
-  const { isPending, createProject } = useCreateProject();
+  const { isPending: isCreating, createProject } = useCreateProject();
+  const { editProject, isPending: isEditing } = useEditProject();
 
   const onSubmit = (data) => {
     // console.log(data);
@@ -28,13 +52,25 @@ export default function CreateProjectForm({ onclose }) {
       deadline: new Date(date).toISOString(),
       tags,
     };
-    console.log(createProject);
-    createProject(newProject, {
-      onSuccess: () => {
-        onclose();
-        reset();
-      },
-    });
+    // console.log(createProject);
+    if (isEditSession) {
+      editProject(
+        { id: editId, newProject },
+        {
+          onSuccess: () => {
+            onclose();
+            reset();
+          },
+        }
+      );
+    } else {
+      createProject(newProject, {
+        onSuccess: () => {
+          onclose();
+          reset();
+        },
+      });
+    }
   };
 
   return (
@@ -83,7 +119,7 @@ export default function CreateProjectForm({ onclose }) {
       </div>
       <DatePickerField label="ددلاین" date={date} setDate={setDate} />
       <div>
-        {isPending ? (
+        {isCreating || isEditing ? (
           <Loading />
         ) : (
           <button type="submit" className="btn btn--primary w-full">

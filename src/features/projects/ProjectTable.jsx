@@ -24,6 +24,7 @@ export default function ProjectTable() {
         <th>فریلنسر ها</th>
         <th>وضعیت</th>
         <th>عملیات</th>
+        <th>درخواست ها</th>
       </Table.Header>
       <Table.Body>
         {projects.map((project, index) => (

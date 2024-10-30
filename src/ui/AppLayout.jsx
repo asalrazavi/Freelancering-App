@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import Sidebar from "./Sidebar";
 
-export default function AppLayout() {
+export default function AppLayout({ children }) {
   return (
     <div className="grid grid-cols-[15rem_1fr] grid-rows-[auto_1fr] h-screen">
       <Header />
-      <Sidebar />
+      {/* <Sidebar /> */}
+      {children}
       <div className="bg-secondary-100 p-8 overflow-y-auto">
         <div className="mx-auto max-w-screen-lg flex flex-col">
           <Outlet />

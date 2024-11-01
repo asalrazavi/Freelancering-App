@@ -90,7 +90,7 @@ export default function CheckOTPForm({
             value={otp}
             onChange={setOtp}
             numInputs={6}
-            renderSeparator={<span>-</span>}
+            renderSeparator={<span className="text-secondary-800">-</span>}
             renderInput={(props) => <input type="number" {...props} />}
             containerStyle="flex flex-row-reverse gap-x-2 justify-center"
             inputStyle={{
@@ -98,6 +98,8 @@ export default function CheckOTPForm({
               padding: "0.5rem 0.2rem",
               border: "1px solid rgb(var(--color-primary-300))",
               borderRadius: "0.5rem",
+              backgroundColor: "rgb(var(--color-secondary-0))",
+              color: "rgb(var(--color-secondary-800))",
             }}
           />
 

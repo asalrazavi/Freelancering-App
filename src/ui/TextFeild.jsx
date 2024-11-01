@@ -6,6 +6,7 @@ export default function TextFeild({
   required,
   validationSchema,
   errors,
+  type = "text",
 }) {
   return (
     <div className="space-y-2">
@@ -16,7 +17,7 @@ export default function TextFeild({
         {...register(name, validationSchema)}
         className="textField__input"
         placeholder={placeholder}
-        type="text"
+        type={type}
         id={name}
         autoComplete="off"
       />

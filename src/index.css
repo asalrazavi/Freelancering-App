@@ -74,7 +74,7 @@
 
 @layer components {
   .textField__input {
-    @apply w-[23rem] py-3 px-2 rounded-xl text-secondary-900 border border-secondary-200  hover:border-primary-500 focus:border-primary-500 focus:bg-secondary-0 transition-all duration-300 ease-out focus:shadow-lg focus:shadow-primary-200 dark:focus:shadow-secondary-200;
+    @apply w-[23rem] py-3 px-2 rounded-xl bg-secondary-0 text-secondary-900 border border-secondary-200  hover:border-primary-500 focus:border-primary-500 focus:bg-secondary-0 transition-all duration-300 ease-out focus:shadow-lg focus:shadow-primary-200 dark:focus:shadow-secondary-100;
   }
   .btn {
     @apply px-3 py-1 font-bold rounded-xl transition-all duration-300;

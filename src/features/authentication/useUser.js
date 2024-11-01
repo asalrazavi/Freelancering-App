@@ -11,7 +11,7 @@ export default function useUser() {
     refetchOnWindowFocus: true,
   });
 
-  console.log(data);
+  // console.log(data);
   const { user } = data || {};
 
   return { user, isLoading };

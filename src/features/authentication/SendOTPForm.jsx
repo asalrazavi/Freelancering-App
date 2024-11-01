@@ -8,7 +8,9 @@ export default function SendOTPForm({ onSubmit, register, isSendOtp }) {
         <h2 className="font-bold text-secondary-800 text-2xl">
           ورود یا ثبت نام
         </h2>
-        <p className="mb-4">برای ادامه شماره موبایل خود را وارد کنید.</p>
+        <p className="mb-4 text-secondary-800">
+          برای ادامه شماره موبایل خود را وارد کنید.
+        </p>
         <TextFeild
           register={register}
           placeholder={"شماره موبایل"}

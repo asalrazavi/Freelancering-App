@@ -10,7 +10,7 @@ export default function RadioInput({
   return (
     <div className="flex items-center gap-x-2 text-secondary-600">
       <input
-        className="cursor-pointer w-4 form-radio"
+        className="cursor-pointer w-4 form-radio bg-secondary-0"
         type="radio"
         name={name}
         id={id}

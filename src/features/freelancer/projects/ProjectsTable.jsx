@@ -15,6 +15,7 @@ export default function ProjectsTable() {
         <td>عنوان پروژه</td>
         <td>بودجه</td>
         <td>ددلاین</td>
+        <td>تگ ها</td>
         <td>وضعیت</td>
         <td>عملیات</td>
       </Table.Header>

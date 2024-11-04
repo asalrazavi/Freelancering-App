@@ -11,7 +11,7 @@ export default function NotFound() {
         </h1>
         <button onClick={moveBack} className="flex items-center gap-x-2">
           <HiArrowRight className="w-6 h-6 text-primary-900" />
-          <span>برگشت</span>
+          <span className="text-primary-900">برگشت</span>
         </button>
       </div>
     </div>

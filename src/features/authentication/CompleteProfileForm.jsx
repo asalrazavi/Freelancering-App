@@ -6,6 +6,8 @@ import Loading from "../../ui/Loading";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import RadioInputGroup from "../../ui/RadioInputGroup";
+// import useUser from "./useUser";
+// import { useEffect } from "react";
 
 export default function CompleteProfileForm() {
   const {
@@ -23,6 +25,12 @@ export default function CompleteProfileForm() {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: completeProfile,
   });
+
+  // const { user } = useUser();
+
+  // useEffect(() => {
+  //   if (user) navigate("/", { replace: true });
+  // }, [user, navigate]);
 
   const onSubmit = async (data) => {
     // e.preventDefault();

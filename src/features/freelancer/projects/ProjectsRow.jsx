@@ -22,11 +22,20 @@ export default function ProjectsRow({ index, project }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <Table.Row>
+    <Table.Row key={project._id}>
       <td>{index + 1}</td>
       <td>{truncateText(project.title, 30)}</td>
       <td>{toPersianNumbersWithComma(project.budget)}</td>
       <td>{toLocalDateShort(project.deadline)}</td>
+      <td>
+        <div className="flex flex-wrap items-center gap-2 max-w-[200px]">
+          {project.tags.map((tag) => (
+            <span className="badge badge--secondary" key={tag}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </td>
       <td>
         <span className={`badge ${projectStatus[project.status].className}`}>
           {projectStatus[project.status].label}

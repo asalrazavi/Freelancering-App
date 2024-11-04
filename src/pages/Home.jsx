@@ -1,3 +1,9 @@
+import HomeLayout from "../features/home/HomeLayout";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <HomeLayout />
+    </div>
+  );
 }

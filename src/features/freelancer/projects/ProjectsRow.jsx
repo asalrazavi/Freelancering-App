@@ -6,6 +6,7 @@ import truncateText from "../../../utils/truncateText";
 import { useState } from "react";
 import Modal from "../../../ui/Modal";
 import CreateProposal from "../../proposals/CreateProposal";
+import { Link } from "react-router-dom";
 
 const projectStatus = {
   OPEN: {
@@ -24,7 +25,9 @@ export default function ProjectsRow({ index, project }) {
   return (
     <Table.Row key={project._id}>
       <td>{index + 1}</td>
-      <td>{truncateText(project.title, 30)}</td>
+      <td>
+        <Link to={project._id}>{truncateText(project.title, 30)}</Link>
+      </td>
       <td>{toPersianNumbersWithComma(project.budget)}</td>
       <td>{toLocalDateShort(project.deadline)}</td>
       <td>

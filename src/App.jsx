@@ -19,6 +19,7 @@ import ProtectedRoute from "./ui/ProtectedRoute";
 import AdminLayout from "./features/admin/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
 import Users from "./pages/Users";
+import ProjectDetail from "./features/freelancer/project/ProjectDetail";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,8 @@ function App() {
           <Route path="/auth" element={<Auth />}></Route>
           <Route path="/complete-profile" element={<CompleteProfile />} />
           <Route path={"/"} element={<Home />} />
+          <Route path="/freelancers" />
+          <Route path="help" />
           <Route path="*" element={<NotFound />} />
           <Route
             path="/owner"
@@ -43,6 +46,7 @@ function App() {
             <Route path="dashboard" element={<OwnerDashboard />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<Project />} />
+            <Route path="projects/detail/:id" element={<ProjectDetail />} />
           </Route>
           <Route
             path="/freelancer"
@@ -56,6 +60,7 @@ function App() {
             <Route path="dashboard" element={<FreelancerDashboard />} />
             <Route path="proposals" element={<Proposals />} />
             <Route path="projects" element={<SubmittedProjects />} />
+            <Route path="projects/:id" element={<ProjectDetail />} />
           </Route>
           <Route
             path="/admin"

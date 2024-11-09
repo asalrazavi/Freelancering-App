@@ -11,7 +11,7 @@ export default function Project() {
 
   return (
     <div>
-      <ProjectHeader project={project} />
+      <ProjectHeader project={project} title={"لیست درخواست های"} />
       <ProposalsTab proposals={project.proposals} />
     </div>
   );

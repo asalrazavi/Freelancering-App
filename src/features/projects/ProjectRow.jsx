@@ -12,15 +12,19 @@ import CreateProjectForm from "./CreateProjectForm";
 import ToggleProjectStatus from "./ToggleProjectStatus";
 import { Link } from "react-router-dom";
 
-export default function ProjectRow({ project, index }) {
+export default function ProjectRow({ project, index, onClick }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const { removeProject } = useRemoveProject();
 
   return (
-    <Table.Row key={project.id}>
+    <Table.Row key={project.id} onClick={onClick}>
       <td>{index + 1}</td>
-      <td>{truncateText(project.title, 30)}</td>
+      <td>
+        <Link to={`detail/${project._id}`}>
+          {truncateText(project.title, 30)}
+        </Link>
+      </td>
       <td>{project.category.title}</td>
       <td>{toPersianNumbersWithComma(project.budget)}</td>
       <td>{toLocalDateShort(project.deadline)}</td>

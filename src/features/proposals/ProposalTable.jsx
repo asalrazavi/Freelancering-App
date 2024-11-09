@@ -9,6 +9,7 @@ export default function ProposalTable() {
 
   if (isLoading) return <Loading />;
   if (!proposals.length) return <Empty resourceName="پروپوزال" />;
+  // console.log(proposals);s
 
   return (
     <Table>

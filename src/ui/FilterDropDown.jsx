@@ -4,9 +4,14 @@ import Select from "./Select";
 export default function FilterDropDown({ options, filterField }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const value = searchParams.get(filterField) || "";
+  // console.log(value);
 
   function handleChange(e) {
-    searchParams.set(filterField, e.target.value);
+    if (e.target.value === "All") {
+      searchParams.delete(filterField);
+    } else {
+      searchParams.set(filterField, e.target.value);
+    }
     setSearchParams(searchParams);
   }
 

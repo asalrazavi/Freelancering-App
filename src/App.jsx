@@ -32,7 +32,7 @@ function App() {
           <Route path="/complete-profile" element={<CompleteProfile />} />
           <Route path={"/"} element={<Home />} />
           <Route path="/freelancers" />
-          <Route path="help" />
+          <Route path="/help" />
           <Route path="*" element={<NotFound />} />
           <Route
             path="/owner"
@@ -75,6 +75,7 @@ function App() {
             <Route path="users" element={<Users />} />
             <Route path="proposals" element={<Proposals />} />
             <Route path="projects" element={<SubmittedProjects />} />
+            <Route path="projects/:id" element={<ProjectDetail />} />
           </Route>
         </Routes>
         <Toaster />

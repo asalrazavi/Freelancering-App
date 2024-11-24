@@ -6,6 +6,7 @@ import UserRow from "./UserRow";
 
 export default function UsersTable() {
   const { isLoading, users } = useUsers();
+  // console.log(users.map((user) => user.skills));
 
   if (isLoading) return <Loading />;
   if (!users.length) return <Empty resourceName="کاربری" />;

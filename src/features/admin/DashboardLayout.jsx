@@ -2,6 +2,7 @@ import useProjects from "../../hooks/useProjects";
 import DashboardHeader from "../../ui/DashboardHeader";
 import Loading from "../../ui/Loading";
 import useProposals from "../proposals/useProposals";
+import CreateRecommend from "../recommendation/CreateRecommendationSystem";
 import Stats from "./Stats";
 import useUsers from "./useUsers";
 
@@ -20,6 +21,7 @@ export default function DashboardLayout() {
         users={users.length}
         proposals={proposals.length}
       />
+      <CreateRecommend />
     </div>
   );
 }

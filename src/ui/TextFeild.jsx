@@ -15,7 +15,7 @@ export default function TextFeild({
       </label>
       <input
         {...register(name, validationSchema)}
-        className="textField__input"
+        className="textField__input w-full"
         placeholder={placeholder}
         type={type}
         id={name}

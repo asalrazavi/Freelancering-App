@@ -51,7 +51,7 @@ export default function ChangeUserStatus({ userId, onClose }) {
           {isPending ? (
             <Loading />
           ) : (
-            <button className="mt-8 btn btn--primary w-full" type="submit">
+            <button className="mt-2 btn btn--primary w-full" type="submit">
               تایید
             </button>
           )}

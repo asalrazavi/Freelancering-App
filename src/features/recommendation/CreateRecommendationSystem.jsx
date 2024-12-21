@@ -1,17 +1,14 @@
 import toast from "react-hot-toast";
 import useProjects from "../../hooks/useProjects";
 import useUser from "../authentication/useUser";
-import Recommend from "./recommend";
+// import Recommend from "./Recommend";
+import Recommender from "./Recommender";
 
 export default function CreateRecommend() {
   const { user } = useUser();
   const skills = user.skills;
 
   const { projects } = useProjects();
-  // console.log("projects", projects);
-
-  // const tags = projects.flatMap((project) => project.tags);
-  // console.log("tags:", tags);
 
   if (!user || !user.skills) {
     toast.error("User or skills are undefined:", user);
@@ -25,7 +22,8 @@ export default function CreateRecommend() {
 
   return (
     <div className="mt-16">
-      <Recommend skills={skills} projects={projects} />
+      {/* <Recommend skills={skills} projects={projects} /> */}
+      <Recommender skills={skills} projects={projects} />
     </div>
   );
 }

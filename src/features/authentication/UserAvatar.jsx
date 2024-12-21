@@ -21,7 +21,7 @@ export default function UserAvatar() {
         <span>{user?.name}</span>
       ) : (
         <span className="text-sm">
-          <Link to={`auth`}>ورود</Link>
+          <Link to={`/auth`}>ورود</Link>
         </span>
       )}
     </div>

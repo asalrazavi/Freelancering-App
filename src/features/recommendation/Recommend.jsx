@@ -5,7 +5,7 @@ import EncodeBinaryVector from "./EncodeBinaryVector";
 export default function Recommend({ skills, projects }) {
   // console.log("projects", projects);
   const encodedProjects = EncodeBinaryVector({ skills, projects });
-  console.log("encodedProjects", encodedProjects);
+  // console.log("encodedProjects", encodedProjects);
 
   // Sort projects by similarity score in descending order
   const rankedProjects = encodedProjects.sort(
@@ -17,7 +17,7 @@ export default function Recommend({ skills, projects }) {
     (project) => project.similarityScore > 0
   );
 
-  console.log("Recommended Projects:", filteredProjects);
+  // console.log("Recommended Projects:", filteredProjects);
 
   if (!filteredProjects || filteredProjects.length === 0)
     return <p>No matching projects available</p>;
@@ -42,11 +42,6 @@ export default function Recommend({ skills, projects }) {
             <ProjectsRow key={project._id} project={project} index={index} />
           ))}
         </Table.Body>
-        {/* {filteredProjects.map((project) => (
-          <li key={project.id || project._id}>
-            {project.title} - Score: {project.similarityScore}
-          </li>
-        ))} */}
       </Table>
     </div>
   );

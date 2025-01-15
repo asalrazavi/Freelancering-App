@@ -32,7 +32,7 @@ export default function AuthContainer() {
     try {
       const { message } = await mutateAsync(data);
       setStep(2);
-      console.log(message);
+      // console.log(message);
       toast.success(message);
     } catch (err) {
       toast.error(err?.response?.data?.message);

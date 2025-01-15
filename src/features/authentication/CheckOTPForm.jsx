@@ -59,7 +59,7 @@ export default function CheckOTPForm({
     };
   }, [time]);
 
-  console.log("otp response", otpResponse);
+  // console.log("otp response", otpResponse);
 
   return (
     <div>

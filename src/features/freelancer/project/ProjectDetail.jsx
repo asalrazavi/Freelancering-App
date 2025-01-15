@@ -5,7 +5,7 @@ import ProjectBody from "./ProjectBody";
 
 export default function ProjectDetail() {
   const { project, isLoading } = useProject();
-  console.log(project);
+  // console.log(project);
 
   if (isLoading) return <Loading />;
 

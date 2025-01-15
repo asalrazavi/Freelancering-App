@@ -36,12 +36,12 @@ export default function CompleteProfileForm() {
   // }, [user, navigate]);
 
   const onSubmit = async (data) => {
-    console.log("user data front input", data);
+    // console.log("user data front input", data);
 
     // e.preventDefault();
     try {
       const { user, message } = await mutateAsync({ ...data, skills: tags });
-      console.log(user, message);
+      // console.log(user, message);
       toast.success(message);
 
       if (user.status !== 2) {

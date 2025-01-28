@@ -1,29 +1,25 @@
+import { useEffect } from "react";
 import toast from "react-hot-toast";
 import useProjects from "../../hooks/useProjects";
 import useUser from "../authentication/useUser";
-// import Recommend from "./Recommend";
 import Recommender from "./Recommender";
 
 export default function CreateRecommend() {
-  const { user } = useUser();
-  const skills = user.skills;
+  const { user, isLoading: isUserLoading } = useUser();
+  const { projects, isLoading: isProjectsLoading } = useProjects();
 
-  const { projects } = useProjects();
-
-  if (!user || !user.skills) {
-    toast.error("User or skills are undefined:", user);
-    return <p>Error: User or skills not found</p>;
-  }
-
-  if (!projects || projects.length === 0) {
-    toast.error("Projects are undefined or empty:", projects);
-    return <p>Error: No projects available</p>;
-  }
+  useEffect(() => {
+    if (!isUserLoading && (!user || !user.skills)) {
+      toast.error("User or skills are undefined");
+    }
+    if (!isProjectsLoading && (!projects || projects.length === 0)) {
+      toast.error("Projects are undefined or empty");
+    }
+  }, [user, projects, isUserLoading, isProjectsLoading]);
 
   return (
     <div className="mt-16">
-      {/* <Recommend skills={skills} projects={projects} /> */}
-      <Recommender skills={skills} projects={projects} />
+      <Recommender skills={user.skills} projects={projects} />
     </div>
   );
 }

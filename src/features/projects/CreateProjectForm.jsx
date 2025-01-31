@@ -9,7 +9,7 @@ import useCreateProject from "./useCreateProject";
 import Loading from "../../ui/Loading";
 import useEditProject from "./useEditProjects";
 
-export default function CreateProjectForm({ onclose, projectToEdit = {} }) {
+export default function CreateProjectForm({ onClose, projectToEdit = {} }) {
   const { _id: editId } = projectToEdit;
   const isEditSession = Boolean(editId);
   const {
@@ -58,7 +58,7 @@ export default function CreateProjectForm({ onclose, projectToEdit = {} }) {
         { id: editId, newProject },
         {
           onSuccess: () => {
-            onclose();
+            onClose();
             reset();
           },
         }
@@ -66,7 +66,7 @@ export default function CreateProjectForm({ onclose, projectToEdit = {} }) {
     } else {
       createProject(newProject, {
         onSuccess: () => {
-          onclose();
+          onClose();
           reset();
         },
       });
@@ -83,8 +83,8 @@ export default function CreateProjectForm({ onclose, projectToEdit = {} }) {
         validationSchema={{
           required: "عنوان ضروری است",
           minLength: {
-            value: 10,
-            message: "طول عنوان نا معتبر است",
+            value: 3,
+            message: "طول عنوان نامعتبر است",
           },
         }}
         errors={errors}

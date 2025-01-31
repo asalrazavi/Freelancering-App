@@ -56,7 +56,7 @@ export default function ProjectRow({ project, index, onClick }) {
           >
             <CreateProjectForm
               projectToEdit={project}
-              onclose={() => setIsEditOpen(false)}
+              onClose={() => setIsEditOpen(false)}
             />
           </Modal>
           <button>

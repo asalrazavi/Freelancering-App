@@ -19,7 +19,7 @@ export default function CreateRecommend() {
 
   return (
     <div className="mt-16">
-      <Recommender skills={user.skills} projects={projects} />
+      <Recommender skills={user.skills} projects={projects} user={user} />
     </div>
   );
 }

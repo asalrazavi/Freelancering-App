@@ -18,8 +18,7 @@ export default function useRecommend() {
       });
     },
     onError: (err) => {
-      const errorMessage = err?.response?.data?.message || "An error occurred.";
-      toast.error(errorMessage);
+      toast.error(err?.response?.data?.message);
     },
   });
   return { createRecommend, isPending, data };

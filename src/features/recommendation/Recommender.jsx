@@ -4,12 +4,14 @@ import Table from "../../ui/Table";
 import ProjectsRow from "../freelancer/projects/ProjectsRow";
 import Loading from "../../ui/Loading";
 
-export default function Recommender({ skills, projects }) {
+export default function Recommender({ skills, projects, user }) {
   const [recommendProjectsID, setRecommendProjectsID] = useState([]);
   const { createRecommend, isPending } = useRecommend();
+  const userId = user._id;
+  console.log(userId);
 
   const handleSubmit = () => {
-    const payload = { skills, projects };
+    const payload = { skills, projects, userId };
     createRecommend(payload, {
       onSuccess: (response) => {
         const recommendedIds = response?.body?.recommended_projects || [];

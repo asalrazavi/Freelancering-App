@@ -1,122 +1,94 @@
-Freelance Project Matching Platform
+# Freelance Project Matching Platform
 
-Overview
+## 🚀 Overview
+This project aims to develop an intelligent freelance platform where **owners** and **freelancers** can log in using their mobile number, upload projects, and allow programmers to view these projects and submit proposals. Additionally, an **admin** role is responsible for managing users and ensuring freelancer identity verification.
 
-This project aims to develop an application that allows owners or freelacers to log in using their mobile number, upload their projects, and let programmers view these projects and submit proposals. Additionally, a third user role, the admin, is responsible for overseeing both owners and programmers. The admin must verify programmers' identities to ensure they are real individuals.
+## 👥 User Roles
+### 🔹 Owners
+- Create and manage projects.
+- Review, accept, or reject received proposals.
 
-User Roles
+### 🔹 Freelancers
+- Submit proposals for available projects.
+- Create new projects.
 
-The platform consists of three main user roles:
+### 🔹 Admin
+- Has full oversight of users, projects, and proposals.
+- Verifies the identity of freelancers to ensure authenticity.
 
-Owners:
+---
+## 📌 Intelligent Matching System
+Each project and freelancer’s skill set is represented as a **binary vector**, where:
+✅ `1` = Skill is present  
+❌ `0` = Skill is absent  
 
-Can create projects.
+### 🔍 Matching Algorithm
+Projects and freelancers are labeled with skills as binary vectors. The system calculates similarity scores using the **cosine similarity method** to rank and recommend the most relevant projects for each freelancer. This ensures optimal project allocation.
 
-Can review, accept, or reject received proposals.
+---
+## ✨ Unique Features
+- 🌙 **Dark/Light Mode Toggle** for better user experience.
+- 🔤 **Sorting** projects by alphabetical order or creation date.
+- 🏷️ **Filtering** projects based on status (All, Open, Closed).
+- 🤖 **AI-powered Project Recommendations** using a binary attribute matching algorithm.
 
-Freelancers:
+---
+## 🛠 Tech Stack
+- **Backend:** Node.js
+- **Database:** MongoDB
+- **Frontend:** React, React Query, Tailwind CSS
+- **Recommendation System:** Binary representation attributes with cosine similarity
 
-Can submit proposals for projects.
+---
+## 🔄 Project Workflow
+1️⃣ Owners register and upload projects.  
+2️⃣ Freelancers register, verify their identity, and set up their skill profile.  
+3️⃣ The **recommendation system** matches projects to freelancers based on skill similarity.  
+4️⃣ Freelancers submit proposals for suitable projects.  
+5️⃣ Owners review and **accept/reject proposals**.  
+6️⃣ The **Admin oversees** the entire process and verifies freelancers' identities.  
 
-Can create projects.
-
-Admin:
-
-Has full oversight of all users and , projects and proposals.
-
-Verifies the identity of freelancers.
-
-Binary Representation for Matching
-
-Each project and programmer's skill set is represented as a binary vector. Each position in the vector represents a specific skill or attribute, where:
-
-1 indicates the presence of a skill.
-
-0 indicates the absence of a skill.
-
-Matching Algorithm
-
-Projects are labeled with required skills as binary vectors, and programmers have profiles containing their skills in the same format. The algorithm calculates the similarity between binary vectors of projects and freelancers using the cosine similarity method. Projects are then ranked for each programmer based on the similarity score. The highest-ranked projects are recommended to programmers, ensuring they see the most relevant opportunities.
-
-Unique Features
-
-This system differentiates itself from existing platforms with the following features:
-
-Dark/Light Mode Toggle
-
-Sorting: Projects can be sorted alphabetically or by creation date.
-
-Filtering: Projects can be filtered by status (All, Open, Closed).
-
-Intelligent Project Recommendations: Uses a binary attribute algorithm to suggest the most suitable projects to each programmer.
-
-Tech Stack
-
-Backend: Node.js
-
-Database: MongoDB
-
-Frontend: React, React Query, Tailwind CSS
-
-Recommendation System: Binary representation attributes with cosine similarity
-
-Project Workflow
-
-Owners register and upload projects.
-
-Freelancers register, verify their identity, and set up their skill profile.
-
-The recommendation system matches projects with programmers based on skills.
-
-Programmers submit proposals for suitable projects.
-
-Employers review and accept/reject proposals.
-
-The administrator oversees all interactions and verifies programmers' identities.
-
-Installation & Setup
-
-Clone the repository:
-
+---
+## 💻 Installation & Setup
+#### 🔹 Clone the repository:
+```bash
 git clone https://github.com/your-repo.git
 cd your-repo
-
-Install backend dependencies:
-
+```
+#### 🔹 Install backend dependencies:
+```bash
 cd backend
 npm install
-
-Install frontend dependencies:
-
+```
+#### 🔹 Install frontend dependencies:
+```bash
 cd frontend
 npm install
-
-Start the development servers:
-
+```
+#### 🔹 Start the development servers:
+```bash
 cd backend
 npm run dev
-
+```
+```bash
 cd frontend
 npm start
+```
 
-Contributing
+---
+## 🤝 Contributing
+We welcome contributions! Follow these steps:
+1. **Fork** the repository.
+2. Create a **new branch** (`feature-branch`).
+3. **Commit** your changes.
+4. **Push** to your fork.
+5. Submit a **pull request**.
 
-Contributions are welcome! Please follow the standard Git workflow:
+---
+## 📜 License
+This project is licensed under the **MIT License**.
 
-Fork the repository.
-
-Create a new branch (feature-branch).
-
-Commit your changes.
-
-Push to your fork.
-
-Submit a pull request.
-
-License
-
-This project is licensed under the MIT License.
-
-Contact
-
-For any questions or suggestions, please reach out via asal.razavi1381@gmail.com.
+---
+## 📩 Contact
+For any questions or suggestions, feel free to reach out:  
+📧 **asal.razavi1381@gmail.com**
